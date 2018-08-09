@@ -1,0 +1,41 @@
+robot_name: 'HIWOSEN'  # 必须使用大写
+robot_name_cn: '沃森'
+first_name: '中文名'
+last_name: '中文姓'
+timezone: HKT
+
+#目前默认支持两种说话语言，可自己定制不同的语言和语句
+language: 'cn' # 语言选择 cn：中文； en：英文
+
+# 最长朗读内容，250个中文字读出的时间不到一分钟
+max_length: 250
+
+#support: base-mic, respeaker-2mic, respeaker-7mic
+active_mic: base-mic
+
+# TTS 服务配置: baidu-tts,iflytek-tts,ali-tts
+tts_engine: baidu-tts
+
+# STT 服务配置: baidu-stt,iflytek-stt,ali-stt
+stt_engine: baidu-stt
+
+# 唤醒SST引擎: sphinx-stt, snowboy-stt
+stt_passive_engine: sphinx-stt
+
+#缺省AI引擎, 所有未知问题交由此引擎随机处理
+default_ai_engine: tuling-ai
+
+#主AI引擎
+ai_engine: richway-ai
+
+#STT & TTS引擎配置
+voice_engines: !include voice_engines.yml
+
+#AI引擎配置
+ai_engines: !include ai_engines.yml
+
+#其他模块配置
+#############################################
+homeassistant: !include homeassistant.yml
+#meetingscreen: !include meetingscreen.yml
+

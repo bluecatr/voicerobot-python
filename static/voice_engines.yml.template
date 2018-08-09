@@ -1,0 +1,48 @@
+# pocketsphinx 唤醒SST引擎（默认）
+#stt: sphinx-stt
+pocketsphinx:
+    fst_model: '/home/pi/.voicerobot/g014b2b/g014b2b.fst'
+    hmm_dir: '/usr/local/share/pocketsphinx/model/hmm/en_US/hub4wsj_sc_8k' #optional
+
+# snowboy 唤醒SST引擎（可选）
+# https://snowboy.kitt.ai/dashboard
+#stt: snowboy-stt
+snowboy:
+    model: '/home/pi/.voicerobot/snowboy/hey_watson.umdl'  # 唤醒词模型
+    sensitivity: "0.5"  # 敏感度
+
+# 百度语音服务
+# http://yuyin.baidu.com/
+#stt: baidu-stt
+#tts: baidu-tts
+baidu_yuyin:
+    api_key: '******************'
+    secret_key: '*************************'
+    per: 0  # 发音人选择 0：女生；1：男生；3：度逍遥；4：度丫丫
+
+
+#科大讯飞
+#http://www.xfyun.cn/
+#stt: iflytek-stt
+#tts: iflytek-tts
+#voice_name:xiaoyan 女;yanping 女;yufeng 男;babyxu 童声;xiaomeng 女;xiaolin 台湾女;xiaoqian 东北女;xiaorong 四川女;xiaokun 河南男;xiaoqiang 湖南男;xiaomei 粤语女;dalong 粤语男;catherine 美式纯英女;john 美式纯英男
+#只有xiaoyan，yufeng和xiaomei支持CSSML标注，其他支持简单标注
+iflytek:
+    ostype: x64 # x64, x86, pi 分别和iflytek_msc libs下的文件名对应
+    accounts:
+        - appid : "appid*****"
+        - appid : "appid****"
+    accent: mandarin # mandarin:普通话; cantonese:粤语
+    voice_name: yufeng # xiaoyan 女; yufeng 男;xiaomei 粤语女
+
+    
+#阿里智能语音交互
+#https://data.aliyun.com/product/nls?spm=a2c0j.8204267.765261.288.eec29f0bThsr6
+#stt: ali-stt
+#tts: ali-tts
+aliyun:
+    ak_id: "*****"
+    ak_secret: "****"
+    model: "chat" # chat 社交聊天; english 英文转写
+    voice_name: "xiaoyun" # xiaogang 男; xiaoyun 女
+

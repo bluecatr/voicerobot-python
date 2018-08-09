@@ -1,0 +1,44 @@
+api_url: &api_url
+  '********************'
+api_password: &api_password
+  '********************'
+broadlink:
+  services:
+    - service: &broadlink_send_pocket
+        [*api_url,'/broadlink','/send_packet_broadlink_rm','?api_password=',*api_password]
+  codes:
+    tv_on: &tv_on
+      'JgBYAAABKJUSEhMTERQSEhMTERQSEhM4EjgRORM3EzcSOBI4EjgSExITEjgSExITEjgTEhITEhMTOBETEzgROBIUETgSOBM4EQAFIwABKEoTAAxdAAEoShIADQU='
+    tv_off: &tv_off
+      'JgBYAAABKJUSEhMTERQSEhMTERQSEhM4EjgRORM3EzcSOBI4EjgSExITEjgSExITEjgTEhITEhMTOBETEzgROBIUETgSOBM4EQAFIwABKEoTAAxdAAEoShIADQU='
+  tasks: &broadlink_tasks
+    tv_power_on:
+      service: *broadlink_send_pocket
+      data: {"packet":[*tv_on]}
+    tv_power_off:
+      service: *broadlink_send_pocket
+      data: {"packet":[*tv_off,*tv_off]}
+
+light:
+  services:
+    - service: &light_turn_on
+        [*api_url,'/light','/turn_on','?api_password=',*api_password]
+    - service: &light_turn_off
+        [*api_url,'/light','/turn_off','?api_password=',*api_password]
+  tasks: &light_tasks
+    white_light_on:
+      service: *light_turn_on
+      data: {"entity_id":"light.mono"}
+    white_light_off:
+      service: *light_turn_off
+      data: {"entity_id":"light.mono"}
+    color_light_on:
+      service: *light_turn_on
+      data: {"entity_id":"light.living_room"}
+    color_light_off:
+      service: *light_turn_off
+      data: {"entity_id":"light.living_room"}
+
+hass_tasks:
+  <<: *broadlink_tasks
+  <<: *light_tasks

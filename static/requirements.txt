@@ -1,0 +1,31 @@
+# core dependencies
+APScheduler==3.0.1
+argparse==1.2.2
+mock==1.0.1
+pytz==2014.10
+PyYAML==3.11
+requests==2.5.0
+
+# Pocketsphinx STT engine
+cmuclmtk==0.1.5
+
+# Email plugin
+python-dateutil==2.3
+
+# Time plugin
+semantic==1.0.3
+
+# wxbot
+itchat==1.3.9
+
+#audio file converter
+pydub==0.20.0
+
+#psutil for mouth
+psutil==5.3.1
+
+#mqtt Client
+paho-mqtt==1.3.0
+
+#respeaker 7 mic array
+pyusb==1.0.0

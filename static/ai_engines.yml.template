@@ -1,0 +1,18 @@
+# 图灵机器人
+#http://www.tuling123.com
+#ai: tuling-ai
+tuling:
+    APIkey: '******'
+    secret: '******' #optinal,如果图灵没有设置secret，注释或留空；否则必须提供
+
+#瑞通知识库
+#ai: richway-ai
+richway:
+    service_url: "http://www.rwworks.com:6188/index/conversation"
+    robotId: "64f7e7c9224a486eba4471c4d7859cad"
+    sessionId: "default"
+    unknown_reply: 
+        - '对不起，没有获得您的问题，请重新提问。'
+        - '对不起，当前无法处理您的问题，请重新提问。'
+        - '对不起，我出了点故障，请稍候再试'
+    translation_url: "http://www.rwworks.com:6188/index/translation"
